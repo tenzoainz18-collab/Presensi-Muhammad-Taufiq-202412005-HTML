@@ -1,0 +1,233 @@
+    <!DOCTYPE html>
+
+    <html lang="id">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Manajemen Mahasiswa</title>
+        <style>
+            /*SARAH*/
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background: linear-gradient(180deg, #ebe0cf, #0459ec);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+            .container {
+                width: 800px;
+            }
+            .card {
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                padding: 20px;
+                border-radius: 15px;
+                color: white;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            }
+            h2 {
+                margin-bottom: 15px;
+                text-align: center;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            input,
+            textarea,
+            select {
+                width: 100%;
+                padding: 10px;
+                border: none;
+                border-radius: 8px;
+                background: #ffffff;
+                color: rgb(0, 0, 0);
+                outline: none;
+                box-sizing: border-box;
+            }
+            /*ABROR*/
+            textarea {
+                grid-column: span 2;
+                resize: none;
+            }
+
+            .full {
+                grid-column: span 2;
+            }
+
+            .ttl {
+                display: flex;
+                gap: 5px;
+            }
+            .ttl select {
+                width: 100%;
+            }
+            button {
+                padding: 10px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: bold;
+            }
+            .submit {
+                background: #22c55e;
+                color: white;
+            }
+            .reset {
+                background: #ef4444;
+                color: white;
+            }
+            /*TOPIK*/
+            .search { /* mengubah tampilan pada bagian search*/
+                margin-top: 15px;/*memberikan jarak atas*/
+                width: 100%; /*lebar elemen */
+            }
+            table { /*mengubah tampilan table*/
+                width: 100%;  /*lebar elemen*/
+                margin-top: 15px; /*memberikan jarak atas*/
+                border-collapse: collapse;/*menggabungkan border tabel agar tidak doble*/
+                background: white;/*mengubah warna background*/
+                color: black; /*mengubah warna tabel*/
+                border-radius: 10px; /*mengubah sudut tabel melengkung*/
+                overflow: hidden; /*menyembunyikan bagian yang keluar dari radius*/
+            }
+            th,
+            td { /*mengatur header tabel dan isi tabel*/
+                padding: 10px; /*memberi jarak tepi*/
+                border: 1px solid #ddd; /*memberi garis border dan warna*/
+                text-align: center; /*buat teks menjadi tengah*/
+            }
+            .form-actions { /*class area untuk tombol*/
+                display: flex; /*untuk menyusun sejajar horizontal*/
+                gap: 10px; /*memberi jarak antar elemen*/
+                margin-top: 10px; /*memberi jarak bagian atas*/
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container"> <!--membuat container untuk isi halaman-->
+            <div class="card"> <!--membuat kotak untuk isi form-->
+                <h2>Manajemen Mahasiswa</h2> <!--judul halaman-->
+
+                <form> <!--awal form input data-->
+
+                    <div class="grid"> <!--tempat untuk layout-->
+
+                        <input type="text" placeholder="NIM"> <!--input teks dan label teks NIM-->
+                        <input type="text" placeholder="Nama Lengkap"> <!--input teks dan label teks Nama lengkap -->
+
+                        <textarea placeholder="Alamat"></textarea> <!--label teks alamat-->
+
+                        <select class="full"> <!--membuat pilihan untuk bagian jenis kelamin-->
+                            <option>-- Pilih Jenis Kelamin --</option> <!--pilihan default -->
+                            <option>Pria</option> <!--opsi pilihan jenis kelamin laki laki-->
+                            <option>Wanita</option> <!--opsi pilihan jenis kelamin perempuan-->
+                        </select>
+                        <!-- ARIEL -->
+                        <div class="ttl"> 
+                            <select>
+                                <option>Tgl</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                                <option>9</option>
+                                <option>10</option>
+                                <option>11</option>
+                                <option>12</option>
+                                <option>13</option>
+                                <option>14</option>
+                                <option>15</option>
+                                <option>16</option>
+                                <option>17</option>
+                                <option>18</option>
+                                <option>19</option>
+                                <option>20</option>
+                                <option>21</option>
+                                <option>22</option>
+                                <option>23</option>
+                                <option>24</option>
+                                <option>25</option>
+                                <option>26</option>
+                                <option>27</option>
+                                <option>28</option>
+                                <option>29</option>
+                                <option>30</option>
+                                <option>31</option>
+                            </select>
+                            <!-- Mengurutkan Bulan Januari- Desember -->
+                            <select>
+                                <option>Bulan</option>
+                                <option>Januari</option>
+                                <option>Februari</option>
+                                <option>Maret</option>
+                                <option>April</option>
+                                <option>Mei</option>
+                                <option>Juni</option>
+                                <option>Juli</option>
+                                <option>Agustus</option>
+                                <option>September</option>
+                                <option>Oktober</option>
+                                <option>November</option>
+                                <option>Desember</option>
+                            </select>
+                            <!-- Mengurutkan Tahun 1995- 2010-->
+                            <select>
+                                <option>Tahun</option>
+                                <option>1995</option>
+                                <option>1996</option>
+                                <option>1997</option>
+                                <option>1998</option>
+                                <option>1999</option>
+                                <option>2000</option>
+                                <option>2001</option>
+                                <option>2002</option>
+                                <option>2003</option>
+                                <option>2004</option>
+                                <option>2005</option>
+                                <option>2006</option>
+                                <option>2007</option>
+                                <option>2008</option>
+                                <option>2009</option>
+                                <option>2010</option>
+                            </select>
+                        </div>
+
+                        <input type="password" placeholder="Password" class="full"> <!-- Untuk bisa mengimput Password-->
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="submit">Simpan Data</button>
+                        <button type="reset" class="reset">Reset</button>
+                    </div>
+
+                </form>
+
+                <input type="text" class="search" placeholder="Cari NIM / Nama">
+
+                <h3>Data Mahasiswa</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>NIM</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>JK</th>
+                            <th>TTL</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </body>
+    </html>
